@@ -35,5 +35,3 @@ print(os.path.exists('new_file.txt')) ## does this filepath exist is whats its c
 
 
 os.remove('new_file.txt') ### deletes files
-
-
