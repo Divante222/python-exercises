@@ -7,9 +7,7 @@ def is_two(a):
         return True
     return False
 
-# is_two('3')
-
-
+is_two('3')
 # Define a function named is_vowel. 
 # It should return True if the passed string 
 # is a vowel, False otherwise.
@@ -21,23 +19,25 @@ def is_vowel(a):
     return False
 
 
-# is_vowel('e')
-
-
+is_vowel('e')
+#     if a.lower() in 'aeioiuAEIOU':
 # Define a function named is_consonant. 
 # It should return True if the passed string is a consonant, 
 # False otherwise. Use your is_vowel function to accomplish this.
-
+def is_consonant2(a):
+    if is_vowel(a):
+        return False 
+    True
+    
+print(is_consonant2('a'))
+    
 def is_consonant(a):
     vowels = ['a','e','i','o','u']
     if a.lower() not in vowels:
         return True
     return False
 
-
-is_consonant('e')
-
-
+# is_consonant('e')
 # Define a function that accepts a string that is a word. 
 # The function should capitalize the first letter of the word 
 # if the word starts with a consonant.
@@ -49,9 +49,7 @@ def the_funct(word):
         return word.capitalize()
     return word
     
-# the_funct('eating')  
-
-
+the_funct('eating')  
 # Define a function named calculate_tip. 
 # It should accept a tip percentage (a number between 0 and 1) and the bill total, 
 # and return the amount to tip.
@@ -59,8 +57,7 @@ def the_funct(word):
 def calculate_tip(tip_percent, bill_total):
     return (tip_percent * bill_total) + bill_total
 
-# calculate_tip(.1, 10)
-
+calculate_tip(.1, 10)
 # Define a function named apply_discount. 
 # It should accept a original price, 
 # and a discount percentage, and return the price after the discount is applied.
@@ -68,8 +65,8 @@ def calculate_tip(tip_percent, bill_total):
 def apply_discount(orig_price, disc_percent):
     return orig_price - (orig_price * disc_percent)
 
-# apply_discount(10, .1)
-
+apply_discount(10, .1)
+    
 # Define a function named handle_commas. 
 # It should accept a string that is a number that contains commas 
 # in it as input, and return a number as output.
@@ -82,9 +79,9 @@ def handle_commas(num_str):
             new_str += i
     return int(new_str)
 
-# the_str = handle_commas('12,323,45,')
-# print(the_str)
-
+the_str = handle_commas('12,323,45,')
+print(the_str)
+    
 # Define a function named get_letter_grade. 
 # It should accept a number and return the 
 # letter grade associated with that number (A-F).
@@ -101,10 +98,10 @@ def get_letter_grade(number):
     elif number <= 59 and number >= 0:
         return 'F'
     return 'You did not return a valid grade'
-# print(get_letter_grade(100))
     
-
-
+print(get_letter_grade(100))
+    
+    
 # Define a function named remove_vowels that accepts 
 # a string and returns a string with all the vowels removed.
 
@@ -117,10 +114,8 @@ def remove_vowels(the_str):
             
     return new_str
 
-# remove_vowels('apple')
-
-
-
+remove_vowels('apple')
+    
 # Define a function named normalize_name. 
 # It should accept a string and return a valid python identifier, that is:
 
@@ -145,6 +140,7 @@ def normalize_name(the_str):
                'u','v','w','x','y','z', ' ', '_']
     alphabet_x = 'abcdefghijklmnopqrstuvwxyz _'
     new_str = ''
+    
     for i in the_str:
         if i.lower() in alphabet:
             new_str = new_str + i
@@ -156,8 +152,9 @@ def normalize_name(the_str):
     
     return new_str
     
-# print(normalize_name('%     dIvante walter parness     %'))
+print(normalize_name('%     dIvante walter parness   %'))
 
+normalize_name('% Completed')
 # Write a function named cumulative_sum that accepts a list of numbers 
 # and returns a list that is the cumulative sum of the numbers in the list.
 
@@ -175,9 +172,9 @@ def cumulative_sum(list_of_numbers):
     return new_list
         
     
-# print(cumulative_sum([1, 2, 3, 4]))
-# print(cumulative_sum([1, 1, 1]))
-
+print(cumulative_sum([1, 2, 3, 4]))
+print(cumulative_sum([1, 1, 1]))
+    
 # Create a function named twelveto24. function_exercises.py
 # It should accept a string in the format 10:45am or 
 # 4:30pm and return a string that is the representation 
@@ -220,8 +217,7 @@ def twelveto24(the_str):
         return str_to_return_for_pm
     
 
-# print(twelveto24('10:45am'))
-
+print(twelveto24('10:45am'))
 # Bonus write a function that does the opposite.
 def totwelve(the_str):
     
@@ -241,48 +237,4 @@ def totwelve(the_str):
 
         
 
-# print(totwelve('12:45'))
-
-# url = "https://gist.githubusercontent.com/ryanorsinger/bec2f59a9cef8ae7428cb70b3541354a/raw/ef64298da52e5d70f4d388f5fd48eccdb02ed3f1/ice_cream.csv"
-# Create a function named col_index. 
-# It should accept a spreadsheet column name, and return the index number of the column.
-# col_index('A') returns 1
-# col_index('B') returns 2
-# col_index('AA') returns 27
-
-def col_index(spreadsheet_column_name):
-    number_im_on = 1
-    multiply_the_letter = 0
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    the_letter_multiplied = ''
-    the_dictionary_of_letters = {}
-
-    for i in range(spreadsheet_column_name):
-        multiply_the_letter += 1
-        
-        for i in alphabet:
-            the_letter_multiplied = i.upper() * multiply_the_letter
-            the_dictionary_of_letters[the_letter_multiplied] = number_im_on
-            number_im_on += 1
-            
-
-
-    for j in the_dictionary_of_letters.items():
-       print(j)
-
-    while True:
-        print('Enter a letter to get the column number')
-        column_letter = input('')
-
-        print('the letter', column_letter, 'is at column', the_dictionary_of_letters[column_letter.upper()])
-        print()
-        print('Do you want to continue? y/n')
-        choice = input('')
-        if choice.upper() == 'N':
-            break
-    return the_dictionary_of_letters
-
-# print('enter a number')
-# the_size_of_the_csv = int(input(''))
-# the_dictionary = col_index(the_size_of_the_csv)
-
+print(totwelve('12:45'))
